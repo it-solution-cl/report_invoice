@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Report Invoice',
-    'version': '14.2',
+    'version': '14.3',
     'description': 'Report Invoice',
-    'author': 'Kendatec',
-    'website': 'https://kendatec.com/',
+    'author': 'IT Solution SpA',
+    'website': 'https://it-solution.cl/',
     'license': 'LGPL-3',
     'category': 'account',
     'depends': [
