@@ -103,34 +103,34 @@
                             </div>
                         </div><br/>                         
                         <div class="page" >
-                            <div style="border-radius: 15px;border: 2px solid black;height: 500px;">
+                            <div style="border-radius: 15px;border: 2px solid black;height: 700px;">
                                 <table class="table table-borderless" >
                                     <thead style="border-bottom:1px solid black;">
-                                        <th style="text-align: center;border-right:1px solid black;" scope="col">CANTIDAD</th>
-                                        <th style="text-align: center;border-right:1px solid black;" scope="col">DETALLE </th>
-                                        <th style="text-align: center;border-right:1px solid black;" scope="col">PRECIO UNITARIO </th>
-                                        <th style="text-align: center;border-right:1px solid black;" scope="col">DESCUENTO</th>
+                                        <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">CANTIDAD</th>
+                                        <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">DETALLE </th>
+                                        <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">PRECIO UNITARIO </th>
+                                        <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">DESCUENTO</th>
                                         <th style="text-align: center;" scope="col">PRECIO ITEM</th>
                                     </thead>
-                                    <tbody >
-                                        <tr t-foreach="doc.invoice_line_ids" t-as="o" >
-                                            <td align="left">
-                                                <span t-field="o.quantity"></span>
-                                            </td > 
-                                            <td align="left">
-                                                <span t-field="o.name"></span>
-                                            </td>
-                                            <td align="right">
-                                                <span t-field="o.price_unit"></span>
-                                            </td>
-                                            <td align="right">
-                                                <span t-field="o.discount"></span>
-                                            </td>
-                                            <td align="right"> 
-                                                <span t-field="o.price_unit"></span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <tbody >
+                                            <tr t-foreach="doc.invoice_line_ids" t-as="o" >
+                                                <td style="text-align: left;font-size: 10pt">
+                                                    <span t-field="o.quantity"></span>
+                                                </td > 
+                                                <td style="text-align: left;font-size: 10pt">
+                                                    <span t-field="o.name"></span>
+                                                </td>
+                                                <td style="text-align: right;font-size: 10pt">
+                                                    <span t-field="o.price_unit"></span>
+                                                </td>
+                                                <td style="text-align: right;font-size: 10pt">
+                                                    <span t-field="o.discount"></span>
+                                                </td>
+                                                <td style="text-align: right;font-size: 10pt"> 
+                                                    <span t-field="o.price_unit"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                 </table>
                             </div>
                         </div><br/>
@@ -172,20 +172,20 @@
                                                 <strong>MONTO TOTAL</strong>
                                             </div>
                                             <div class="col-5" style="text-align: right">
-                                                <span t-esc="doc.total_discount()" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/><br/>
-                                                <strong t-field="doc.amount_untaxed" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/>
-                                                <strong t-field="doc.amount_tax" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/>
+                                                <span t-esc="doc.total_discount()" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/><br/>
+                                                <strong t-field="doc.amount_untaxed" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/>
+                                                <strong t-field="doc.amount_tax" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/>
                                                 <strong /><br/> <br/>
-                                                <strong  t-field="doc.amount_total" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                                <strong  t-field="doc.amount_total" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/>
                                             </div>
                                         </div>
                                         <!-- <br/>
-                                        <span >Dcto.  </span> <span class="m-5"  t-esc="doc.total_discount()" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/><br/>
-                                        <span >MONTO Neto <strong class="m-3" style="margin-left:20px" t-field="doc.amount_untaxed" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></span><br/>
-                                        <span >MONTO IVA 19% <strong class="m-2"  t-field="doc.amount_tax" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/> </span><br/>
+                                        <span >Dcto.  </span> <span class="m-5"  t-esc="doc.total_discount()" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/><br/>
+                                        <span >MONTO Neto <strong class="m-3" style="margin-left:20px" t-field="doc.amount_untaxed" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/></span><br/>
+                                        <span >MONTO IVA 19% <strong class="m-2"  t-field="doc.amount_tax" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/> </span><br/>
                                         <span >MONTO EXENTO </span><br/>
                                 
-                                        <strong >MONTO TOTAL <span class="m-2" t-field="doc.amount_total" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></strong> -->
+                                        <strong >MONTO TOTAL <span class="m-2" t-field="doc.amount_total" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/></strong> -->
                                     </div>
         
                                 </div>
@@ -321,34 +321,34 @@
                         </div>
                     </div><br/>                         
                     <div class="page" >
-                        <div style="border-radius: 15px;border: 2px solid black;height: 500px;">
+                        <div style="border-radius: 15px;border: 2px solid black;height: 700px;">
                             <table class="table table-borderless" >
                                 <thead style="border-bottom:1px solid black;">
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">CANTIDAD</th>
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">DETALLE </th>
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">PRECIO UNITARIO </th>
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">DESCUENTO</th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">CANTIDAD</th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">DETALLE </th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">PRECIO UNITARIO </th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">DESCUENTO</th>
                                     <th style="text-align: center;" scope="col">PRECIO ITEM</th>
                                 </thead>
-                                <tbody >
-                                    <tr t-foreach="doc.invoice_line_ids" t-as="o" >
-                                        <td align="left">
-                                            <span t-field="o.quantity"></span>
-                                        </td > 
-                                        <td align="left">
-                                            <span t-field="o.name"></span>
-                                        </td>
-                                        <td align="right">
-                                            <span t-field="o.price_unit"></span>
-                                        </td>
-                                        <td align="right">
-                                            <span t-field="o.discount"></span>
-                                        </td>
-                                        <td align="right"> 
-                                            <span t-field="o.price_unit"></span>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                    <tbody >
+                                        <tr t-foreach="doc.invoice_line_ids" t-as="o" >
+                                            <td style="text-align: left;font-size: 10pt">
+                                                <span t-field="o.quantity"></span>
+                                            </td > 
+                                            <td style="text-align: left;font-size: 10pt">
+                                                <span t-field="o.name"></span>
+                                            </td>
+                                            <td style="text-align: right;font-size: 10pt">
+                                                <span t-field="o.price_unit"></span>
+                                            </td>
+                                            <td style="text-align: right;font-size: 10pt">
+                                                <span t-field="o.discount"></span>
+                                            </td>
+                                            <td style="text-align: right;font-size: 10pt"> 
+                                                <span t-field="o.price_unit"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                             </table>
                         </div>
                     </div><br/>
@@ -393,20 +393,20 @@
                                             <strong>MONTO TOTAL</strong>
                                         </div>
                                         <div class="col-5" style="text-align: right">
-                                            <span t-esc="doc.total_discount()" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/><br/>
-                                            <strong t-field="doc.amount_untaxed" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/>
-                                            <strong t-field="doc.amount_tax" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/>
+                                            <span t-esc="doc.total_discount()" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/><br/>
+                                            <strong t-field="doc.amount_untaxed" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/>
+                                            <strong t-field="doc.amount_tax" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/>
                                             <strong /><br/> <br/>
-                                            <strong  t-field="doc.amount_total" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                            <strong  t-field="doc.amount_total" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/>
                                         </div>
                                     </div>
                                     <!-- <br/>
-                                    <span >Dcto.  </span> <span class="m-5"  t-esc="doc.total_discount()" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/><br/>
-                                    <span >MONTO Neto <strong class="m-3" style="margin-left:20px" t-field="doc.amount_untaxed" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></span><br/>
-                                    <span >MONTO IVA 19% <strong class="m-2"  t-field="doc.amount_tax" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/> </span><br/>
+                                    <span >Dcto.  </span> <span class="m-5"  t-esc="doc.total_discount()" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/><br/>
+                                    <span >MONTO Neto <strong class="m-3" style="margin-left:20px" t-field="doc.amount_untaxed" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/></span><br/>
+                                    <span >MONTO IVA 19% <strong class="m-2"  t-field="doc.amount_tax" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/> </span><br/>
                                     <span >MONTO EXENTO </span><br/>
                             
-                                    <strong >MONTO TOTAL <span class="m-2" t-field="doc.amount_total" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></strong> -->
+                                    <strong >MONTO TOTAL <span class="m-2" t-field="doc.amount_total" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/></strong> -->
                                 </div>
                             </div>
                             
@@ -540,34 +540,34 @@
                         </div>
                     </div><br/>                         
                     <div class="page" >
-                        <div style="border-radius: 15px;border: 2px solid black;height: 500px;">
+                        <div style="border-radius: 15px;border: 2px solid black;height: 700px;">
                             <table class="table table-borderless" >
                                 <thead style="border-bottom:1px solid black;">
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">CANTIDAD</th>
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">DETALLE </th>
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">PRECIO UNITARIO </th>
-                                    <th style="text-align: center;border-right:1px solid black;" scope="col">DESCUENTO</th>
-                                    <th style="text-align: center;" scope="col">PRECIO ITEM</th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">CANTIDAD</th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">DETALLE </th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">PRECIO UNITARIO </th>
+                                    <th style="text-align: center;border-right:1px solid black;font-size: 10pt" scope="col">DESCUENTO</th>
+                                    <th style="text-align: center;font-size: 10pt" scope="col">PRECIO ITEM</th>
                                 </thead>
-                                <tbody >
-                                    <tr t-foreach="doc.invoice_line_ids" t-as="o" >
-                                        <td align="left">
-                                            <span t-field="o.quantity"></span>
-                                        </td > 
-                                        <td align="left">
-                                            <span t-field="o.name"></span>
-                                        </td>
-                                        <td align="right">
-                                            <span t-field="o.price_unit"></span>
-                                        </td>
-                                        <td align="right">
-                                            <span t-field="o.discount"></span>
-                                        </td>
-                                        <td align="right"> 
-                                            <span t-field="o.price_unit"></span>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                    <tbody >
+                                        <tr t-foreach="doc.invoice_line_ids" t-as="o" >
+                                            <td style="text-align: left;font-size: 10pt">
+                                                <span t-field="o.quantity"></span>
+                                            </td > 
+                                            <td style="text-align: left;font-size: 10pt">
+                                                <span t-field="o.name"></span>
+                                            </td>
+                                            <td style="text-align: right;font-size: 10pt">
+                                                <span t-field="o.price_unit"></span>
+                                            </td>
+                                            <td style="text-align: right;font-size: 10pt">
+                                                <span t-field="o.discount"></span>
+                                            </td>
+                                            <td style="text-align: right;font-size: 10pt"> 
+                                                <span t-field="o.price_unit"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                             </table>
                         </div>
                     </div><br/>
@@ -612,20 +612,20 @@
                                             <strong>MONTO TOTAL</strong>
                                         </div>
                                         <div class="col-5" style="text-align: right">
-                                            <span t-esc="doc.total_discount()" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/><br/>
-                                            <strong t-field="doc.amount_untaxed" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/>
-                                            <strong t-field="doc.amount_tax" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/>
+                                            <span t-esc="doc.total_discount()" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/><br/>
+                                            <strong t-field="doc.amount_untaxed" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/>
+                                            <strong t-field="doc.amount_tax" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/>
                                             <strong /><br/> <br/>
-                                            <strong  t-field="doc.amount_total" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                            <strong  t-field="doc.amount_total" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/>
                                         </div>
                                     </div>
                                     <!-- <br/>
-                                    <span >Dcto.  </span> <span class="m-5"  t-esc="doc.total_discount()" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/><br/><br/>
-                                    <span >MONTO Neto <strong class="m-3" style="margin-left:20px" t-field="doc.amount_untaxed" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></span><br/>
-                                    <span >MONTO IVA 19% <strong class="m-2"  t-field="doc.amount_tax" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/> </span><br/>
+                                    <span >Dcto.  </span> <span class="m-5"  t-esc="doc.total_discount()" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/><br/><br/>
+                                    <span >MONTO Neto <strong class="m-3" style="margin-left:20px" t-field="doc.amount_untaxed" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/></span><br/>
+                                    <span >MONTO IVA 19% <strong class="m-2"  t-field="doc.amount_tax" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/> </span><br/>
                                     <span >MONTO EXENTO </span><br/>
                             
-                                    <strong >MONTO TOTAL <span class="m-2" t-field="doc.amount_total" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/></strong> -->
+                                    <strong >MONTO TOTAL <span class="m-2" t-field="doc.amount_total" t-options='{"widget": "integer", "display_currency": doc.currency_id}'/></strong> -->
                                 </div>
                             </div>
                             
